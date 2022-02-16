@@ -222,7 +222,7 @@ while(1):
     틱이 끝나자마자 움직이지 않는 한, 상자는 (-100,-100)에 고정되어
     100,500,1000 시간동안 움직이지 않는다.
     '''
-    # box one                                                                                                                                     힘드네;;
+    # box one
     if boxonetick<len(boxonemover)-1: # 상자 1 틱이 끝이 아닐 때
         window.blit(boxone,boxonemover[boxonetick]) # 상자 1의 위치 이동 표시
         boxonetick+=1 #상자 1 틱 증가
