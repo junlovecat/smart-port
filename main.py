@@ -266,11 +266,15 @@ while(1):
         boxthreetick=0 # 상자 3-3 틱 초기화
         boxthree=chooseabox() # 상자 3-3 색깔 랜덤 바꾸기
     
-    # box four
+    # box four 3947
     if boxfourtick<len(boxfourmover)-1: # 상자 4-4 틱이 끝이 아닐 때
         window.blit(boxfour,boxfourmover[boxfourtick])
         # 상자 4-4의 위치 이동 표시
-        boxfourtick+=1 # 상자 4-4 틱 증가
+        if 200>boxfourtrucktick or boxfourtrucktick>1600: # 4-t 틱이 충돌 가능 반경에 다다르지 않았을 때
+            boxfourtick+=1 # 상자 4-4 틱 증가
+        elif 4500<boxfourtick<5500: # 충돌이 임박했을 때
+            boxfourtick-=1 # 상자 4-4 틱 감소 (뒤로)
+        else:boxfourtick+=1 # 충돌 반경에 다다랐으나 박스 4-4는 오지 않았을 때
     else: # 상자 4-4 틱이 끝종에 다다랐을 때
         boxfourtick=0 # 상자 4-4 틱 초기화
         boxfour=chooseabox() # 상자 4-4 색깔 랜덤 바꾸기
